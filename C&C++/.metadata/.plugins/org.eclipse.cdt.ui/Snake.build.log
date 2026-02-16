@@ -1,0 +1,17 @@
+03:00:38 **** Incremental Build of configuration Debug for project Snake ****
+Info: Internal Builder is used for build
+gcc -o Snake.exe "src\\Snake.o" 
+src\Snake.o: In function `WndProc@16':
+C:\Users\alisr\Desktop\uni\TestC\Snake\Debug/../src/Snake.c:100: undefined reference to `CreateSolidBrush@4'
+C:\Users\alisr\Desktop\uni\TestC\Snake\Debug/../src/Snake.c:105: undefined reference to `GetStockObject@4'
+C:\Users\alisr\Desktop\uni\TestC\Snake\Debug/../src/Snake.c:109: undefined reference to `SetBkColor@8'
+C:\Users\alisr\Desktop\uni\TestC\Snake\Debug/../src/Snake.c:110: undefined reference to `TextOutA@20'
+C:\Users\alisr\Desktop\uni\TestC\Snake\Debug/../src/Snake.c:113: undefined reference to `CreateSolidBrush@4'
+C:\Users\alisr\Desktop\uni\TestC\Snake\Debug/../src/Snake.c:117: undefined reference to `CreateSolidBrush@4'
+C:\Users\alisr\Desktop\uni\TestC\Snake\Debug/../src/Snake.c:121: undefined reference to `DeleteObject@4'
+C:\Users\alisr\Desktop\uni\TestC\Snake\Debug/../src/Snake.c:122: undefined reference to `DeleteObject@4'
+C:\Users\alisr\Desktop\uni\TestC\Snake\Debug/../src/Snake.c:123: undefined reference to `DeleteObject@4'
+collect2.exe: error: ld returned 1 exit status
+
+03:00:39 Build Failed. 9 errors, 0 warnings. (took 137ms)
+

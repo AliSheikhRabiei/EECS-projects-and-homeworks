@@ -1,0 +1,93 @@
+package model;
+
+import junit_tests.InsufficientStockException;
+import junit_tests.TooManyStoresException;
+
+public class RetailStore {
+
+	private String name;
+	
+	private StoreManager manager;
+	
+	private String[] product;
+	private int[] stock;
+	private int limit=6;
+	private int counter=0;
+
+	private RetailStore retailStore;
+	
+	public RetailStore(String name) {
+		this.name=name;
+		this.product=new String[limit];
+		this.stock=new int[limit];
+		for(int i=0; i<this.limit;i++ ) {
+			stock[i]=0;
+		}
+		this.counter=0;
+	}
+
+	public int getAvailableStock(String product) {
+		int quantity=0;
+		int index=finder(product);
+		if (index>=0)
+		{
+			quantity=this.stock[index];
+		}
+		return quantity;
+	}
+
+	public void addStock(String product, int stock) {
+		this.product[counter]=product;
+		this.stock[counter]=stock;
+		counter++;
+		
+	}
+	
+	private int finder(String product) {
+		int index = -1;
+		for(int i = 0; i < this.counter; i++) {
+			if(this.product[i].equals(product)) {
+				index = i;
+			}
+		}
+		return index;
+	}
+
+	public void submitOrder(CustomerProfile customer, String product, int quantity, String date) throws InsufficientStockException {
+		int index=finder(product);
+		String stat="succeeded";
+			if((index>=0)&&(this.stock[index]>=quantity)) {
+				this.stock[index]-=quantity;
+				customer.getStatusofLastOrder(product, quantity, this.name, stat);	
+			}
+			else {
+				stat="failed";
+				customer.getStatusofLastOrder(product, quantity, this.name, stat);
+				throw new InsufficientStockException("short on supply");
+			}
+	}
+
+	public void setManager(StoreManager manager) throws TooManyStoresException{
+		if(manager.getNos() + 1 > manager.getMaxStores()) {
+			throw new TooManyStoresException("Exceeds manager's maximum");
+		}
+		else {
+			this.manager = manager; 
+			manager.getStores()[manager.getNos()] = this; 
+			manager.setNos(manager.getNos() + 1);
+		}
+	}
+
+	public StoreManager getManager() {
+		return this.manager;
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+}

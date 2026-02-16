@@ -1,0 +1,91 @@
+package model;
+
+//import java.util.Arrays;
+
+public class Floor {
+    private int maxCapacity;    
+    private Unit[] units;
+    private int size;           
+
+    public Floor(int maxCapacity) {
+        this.maxCapacity = maxCapacity;
+        this.units = new Unit[maxCapacity];
+        this.size = 0;
+    }
+
+    public Floor(Floor other) {
+        this.maxCapacity = other.maxCapacity;
+        this.units       = new Unit[other.maxCapacity];
+        this.size        = other.size;
+        for (int i = 0; i < size; i++) {
+            this.units[i] = new Unit(other.units[i]);
+        }
+    }
+    
+    public int utilized() {
+        int sum = 0;
+        for (int i = 0; i < size; i++) {
+            sum += units[i].getAreaFeet();
+        }
+        return sum;
+    }
+	@Override
+    public String toString() {
+        int used = utilized();
+        int rem  = maxCapacity - used;
+        StringBuilder sb = new StringBuilder();
+        sb.append(String.format(
+            "Floor's utilized space is %d sq ft (%d sq ft remaining): [",
+            used, rem
+        ));
+        for (int i = 0; i < size; i++) {
+            Unit u = units[i];
+            sb.append(String.format(
+                "%s: %d sq ft (%d' by %d')",
+                u.getRoom(),
+                u.getAreaFeet(),
+                u.getWidth(),
+                u.getLength()
+            ));
+            if (i < size - 1) {
+                sb.append(", ");
+            }
+        }
+        sb.append("]");
+        return sb.toString();
+    }
+	
+    public void addUnit(String function, int w, int l)
+            throws InsufficientFloorSpaceException {
+        		if (utilized() + w*l> maxCapacity) {
+        			throw new InsufficientFloorSpaceException();
+        		}
+        units[size++] = new Unit(function, w, l);
+    }
+
+	@Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Floor)) return false;
+        Floor f = (Floor) o;
+        if (this.maxCapacity != f.maxCapacity) return false;
+        if (this.size != f.size) return false;
+
+        boolean[] used = new boolean[size];
+        for (int i = 0; i < size; i++) {
+            boolean found = false;
+            for (int j = 0; j < size; j++) {
+                if (!used[j] && units[i].equals(f.units[j])) {
+                    used[j] = true;
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) return false;
+        }
+        return true;
+    
+	}
+
+    
+}

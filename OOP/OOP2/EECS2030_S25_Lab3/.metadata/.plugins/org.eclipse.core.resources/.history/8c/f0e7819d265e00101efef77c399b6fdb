@@ -1,0 +1,60 @@
+package model;
+
+public class StoreManager {
+	private String name;
+	private final int limit=3;
+	private int maxStores;
+	private RetailStore[] stores;
+	private int counter;
+	
+	private static StoreManager manager= null;
+	
+	
+	
+	public StoreManager(String name) {
+		super();
+		this.name = name;
+		this.stores = new RetailStore[limit];
+		this.counter = 0;
+	}
+
+	public static StoreManager getInstance() {
+		if(manager == null) {
+			manager = new StoreManager();
+		}
+		return manager; 
+	}
+	
+	public StoreManager() {
+		super();
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getMaxStores() {
+		return maxStores;
+	}
+
+	public void setMaxStores(int maxStores) {
+		this.maxStores = maxStores;
+	}
+
+	public static void resetManager() {
+		// TODO Auto-generated method stub
+		manager=null;
+	}
+
+	public RetailStore[] getStores() {	
+		return this.stores;
+	}
+
+
+
+	
+}

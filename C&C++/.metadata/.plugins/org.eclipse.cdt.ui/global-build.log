@@ -1,0 +1,416 @@
+Info: Nothing to build for helloworld
+Info: Nothing to build for helloworld
+Info: Nothing to build for helloworld
+03:03:06 **** Incremental Build of configuration Debug for project helloworld ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\helloworld.o" "..\\src\\helloworld.c" 
+gcc -o helloworld.exe "src\\helloworld.o" 
+20:36:04 **** Incremental Build of configuration Debug for project helloworld ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\lab5A.o" "..\\src\\lab5A.c" 
+..\src\lab5A.c: In function 'main':
+..\src\lab5A.c:8:64: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'int' [-Wformat=]
+   scanf("Enter an integer and a character separated by blank: %d %c",c1 ,c2);
+                                                                ^
+..\src\lab5A.c:8:67: warning: format '%c' expects argument of type 'char *', but argument 3 has type 'int' [-Wformat=]
+   scanf("Enter an integer and a character separated by blank: %d %c",c1 ,c2);
+                                                                   ^
+..\src\lab5A.c:9:8: warning: comparison between pointer and integer
+   if(c1=="-10000"||c2=="-10000"){
+        ^~
+..\src\lab5A.c:9:8: warning: comparison with string literal results in unspecified behavior [-Waddress]
+..\src\lab5A.c:9:22: warning: comparison between pointer and integer
+   if(c1=="-10000"||c2=="-10000"){
+                      ^~
+..\src\lab5A.c:9:22: warning: comparison with string literal results in unspecified behavior [-Waddress]
+..\src\lab5A.c:12:6: warning: implicit declaration of function 'isDigit' [-Wimplicit-function-declaration]
+   if(isDigit(c2)==1){
+      ^~~~~~~
+..\src\lab5A.c:15:11: warning: implicit declaration of function 'isLetter' [-Wimplicit-function-declaration]
+   else if(isLetter(c2)){
+           ^~~~~~~~
+..\src\lab5A.c:18:11: warning: implicit declaration of function 'isOperator' [-Wimplicit-function-declaration]
+   else if(isOperator(c2)){
+           ^~~~~~~~~~
+..\src\lab5A.c: At top level:
+..\src\lab5A.c:28:5: error: conflicting types for 'isDigit'
+ int isDigit(char c){
+     ^~~~~~~
+..\src\lab5A.c:28:1: note: an argument type that has a default promotion can't match an empty parameter name list declaration
+ int isDigit(char c){
+ ^~~
+..\src\lab5A.c:12:6: note: previous implicit declaration of 'isDigit' was here
+   if(isDigit(c2)==1){
+      ^~~~~~~
+..\src\lab5A.c:34:5: error: conflicting types for 'isLetter'
+ int isLetter(char c){
+     ^~~~~~~~
+..\src\lab5A.c:34:1: note: an argument type that has a default promotion can't match an empty parameter name list declaration
+ int isLetter(char c){
+ ^~~
+..\src\lab5A.c:15:11: note: previous implicit declaration of 'isLetter' was here
+   else if(isLetter(c2)){
+           ^~~~~~~~
+..\src\lab5A.c:40:5: error: conflicting types for 'isOperator'
+ int isOperator(char c){
+     ^~~~~~~~~~
+..\src\lab5A.c:40:1: note: an argument type that has a default promotion can't match an empty parameter name list declaration
+ int isOperator(char c){
+ ^~~
+..\src\lab5A.c:18:11: note: previous implicit declaration of 'isOperator' was here
+   else if(isOperator(c2)){
+           ^~~~~~~~~~
+20:38:19 **** Incremental Build of configuration Debug for project helloworld ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\lab5A.o" "..\\src\\lab5A.c" 
+..\src\lab5A.c: In function 'main':
+..\src\lab5A.c:12:64: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'int' [-Wformat=]
+   scanf("Enter an integer and a character separated by blank: %d %c",c1 ,c2);
+                                                                ^
+..\src\lab5A.c:12:67: warning: format '%c' expects argument of type 'char *', but argument 3 has type 'int' [-Wformat=]
+   scanf("Enter an integer and a character separated by blank: %d %c",c1 ,c2);
+                                                                   ^
+..\src\lab5A.c:13:20: warning: comparison between pointer and integer
+   if(c1==-10000||c2=="-10000"){
+                    ^~
+..\src\lab5A.c:13:20: warning: comparison with string literal results in unspecified behavior [-Waddress]
+..\src\lab5A.c:16:6: error: called object 'isDigit' is not a function or function pointer
+   if(isDigit(c2)==1){
+      ^~~~~~~
+..\src\lab5A.c:4:5: note: declared here
+ int isDigit;
+     ^~~~~~~
+..\src\lab5A.c:19:11: error: called object 'isLetter' is not a function or function pointer
+   else if(isLetter(c2)){
+           ^~~~~~~~
+..\src\lab5A.c:5:5: note: declared here
+ int isLetter;
+     ^~~~~~~~
+..\src\lab5A.c:22:11: error: called object 'isOperator' is not a function or function pointer
+   else if(isOperator(c2)){
+           ^~~~~~~~~~
+..\src\lab5A.c:6:5: note: declared here
+ int isOperator;
+     ^~~~~~~~~~
+..\src\lab5A.c: At top level:
+..\src\lab5A.c:32:5: error: 'isDigit' redeclared as different kind of symbol
+ int isDigit(char c){
+     ^~~~~~~
+..\src\lab5A.c:4:5: note: previous declaration of 'isDigit' was here
+ int isDigit;
+     ^~~~~~~
+..\src\lab5A.c:38:5: error: 'isLetter' redeclared as different kind of symbol
+ int isLetter(char c){
+     ^~~~~~~~
+..\src\lab5A.c:5:5: note: previous declaration of 'isLetter' was here
+ int isLetter;
+     ^~~~~~~~
+..\src\lab5A.c:44:5: error: 'isOperator' redeclared as different kind of symbol
+ int isOperator(char c){
+     ^~~~~~~~~~
+..\src\lab5A.c:6:5: note: previous declaration of 'isOperator' was here
+ int isOperator;
+     ^~~~~~~~~~
+20:39:23 **** Incremental Build of configuration Debug for project helloworld ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\lab5A.o" "..\\src\\lab5A.c" 
+..\src\lab5A.c: In function 'main':
+..\src\lab5A.c:12:64: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'int' [-Wformat=]
+   scanf("Enter an integer and a character separated by blank: %d %c",c1 ,c2);
+                                                                ^
+..\src\lab5A.c:12:67: warning: format '%c' expects argument of type 'char *', but argument 3 has type 'int' [-Wformat=]
+   scanf("Enter an integer and a character separated by blank: %d %c",c1 ,c2);
+                                                                   ^
+..\src\lab5A.c:13:20: warning: comparison between pointer and integer
+   if(c1==-10000||c2=="-10000"){
+                    ^~
+..\src\lab5A.c:13:20: warning: comparison with string literal results in unspecified behavior [-Waddress]
+..\src\lab5A.c:12:3: warning: 'c2' is used uninitialized in this function [-Wuninitialized]
+   scanf("Enter an integer and a character separated by blank: %d %c",c1 ,c2);
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\lab5A.c:12:3: warning: 'c1' is used uninitialized in this function [-Wuninitialized]
+gcc -o helloworld.exe "src\\helloworld.o" "src\\lab5A.o" 
+src\lab5A.o: In function `main':
+C:\Users\alisr\Desktop\uni\TestC\helloworld\Debug/../src/lab5A.c:8: multiple definition of `main'
+src\helloworld.o:C:\Users\alisr\Desktop\uni\TestC\helloworld\Debug/../src/helloworld.c:14: first defined here
+collect2.exe: error: ld returned 1 exit status
+20:39:37 **** Incremental Build of configuration Debug for project helloworld ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\helloworld.o" "..\\src\\helloworld.c" 
+gcc -o helloworld.exe "src\\helloworld.o" "src\\lab5A.o" 
+Info: Nothing to build for helloworld
+Info: Nothing to build for helloworld
+20:40:21 **** Incremental Build of configuration Debug for project helloworld ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\helloworld.o" "..\\src\\helloworld.c" 
+..\src\helloworld.c: In function 'main':
+..\src\helloworld.c:21:64: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'int' [-Wformat=]
+   scanf("Enter an integer and a character separated by blank: %d %c",c1 ,c2);
+                                                                ^
+..\src\helloworld.c:21:67: warning: format '%c' expects argument of type 'char *', but argument 3 has type 'int' [-Wformat=]
+   scanf("Enter an integer and a character separated by blank: %d %c",c1 ,c2);
+                                                                   ^
+..\src\helloworld.c:22:20: warning: comparison between pointer and integer
+   if(c1==-10000||c2=="-10000"){
+                    ^~
+..\src\helloworld.c:22:20: warning: comparison with string literal results in unspecified behavior [-Waddress]
+..\src\helloworld.c:21:3: warning: 'c2' is used uninitialized in this function [-Wuninitialized]
+   scanf("Enter an integer and a character separated by blank: %d %c",c1 ,c2);
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\helloworld.c:21:3: warning: 'c1' is used uninitialized in this function [-Wuninitialized]
+gcc -o helloworld.exe "src\\helloworld.o" "src\\lab5A.o" 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file helloworld.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+20:40:25 **** Incremental Build of configuration Debug for project helloworld ****
+Info: Internal Builder is used for build
+gcc -o helloworld.exe "src\\helloworld.o" "src\\lab5A.o" 
+src\lab5A.o: In function `main':
+C:\Users\alisr\Desktop\uni\TestC\helloworld\Debug/../src/lab5A.c:8: multiple definition of `main'
+src\helloworld.o:C:\Users\alisr\Desktop\uni\TestC\helloworld\Debug/../src/helloworld.c:17: first defined here
+src\lab5A.o: In function `isDigit':
+C:\Users\alisr\Desktop\uni\TestC\helloworld\Debug/../src/lab5A.c:32: multiple definition of `isDigit'
+src\helloworld.o:C:\Users\alisr\Desktop\uni\TestC\helloworld\Debug/../src/helloworld.c:41: first defined here
+src\lab5A.o: In function `isLetter':
+C:\Users\alisr\Desktop\uni\TestC\helloworld\Debug/../src/lab5A.c:38: multiple definition of `isLetter'
+src\helloworld.o:C:\Users\alisr\Desktop\uni\TestC\helloworld\Debug/../src/helloworld.c:47: first defined here
+src\lab5A.o: In function `isOperator':
+C:\Users\alisr\Desktop\uni\TestC\helloworld\Debug/../src/lab5A.c:44: multiple definition of `isOperator'
+src\helloworld.o:C:\Users\alisr\Desktop\uni\TestC\helloworld\Debug/../src/helloworld.c:53: first defined here
+collect2.exe: error: ld returned 1 exit status
+20:40:37 **** Incremental Build of configuration Debug for project helloworld ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\lab5A.o" "..\\src\\lab5A.c" 
+gcc -o helloworld.exe "src\\helloworld.o" "src\\lab5A.o" 
+Info: Nothing to build for helloworld
+Info: Nothing to build for helloworld
+Info: Nothing to build for helloworld
+Info: Nothing to build for helloworld
+Info: Nothing to build for helloworld
+Info: Nothing to build for helloworld
+Info: Nothing to build for helloworld
+20:43:55 **** Incremental Build of configuration Debug for project helloworld ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\helloworld.o" "..\\src\\helloworld.c" 
+..\src\helloworld.c: In function 'main':
+..\src\helloworld.c:22:20: warning: comparison between pointer and integer
+   if(c1==-10000||c2=="-10000"){
+                    ^~
+..\src\helloworld.c:22:20: warning: comparison with string literal results in unspecified behavior [-Waddress]
+gcc -o helloworld.exe "src\\helloworld.o" "src\\lab5A.o" 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file helloworld.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+20:44:24 **** Incremental Build of configuration Debug for project helloworld ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\helloworld.o" "..\\src\\helloworld.c" 
+gcc -o helloworld.exe "src\\helloworld.o" "src\\lab5A.o" 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file helloworld.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+20:44:40 **** Incremental Build of configuration Debug for project helloworld ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\helloworld.o" "..\\src\\helloworld.c" 
+gcc -o helloworld.exe "src\\helloworld.o" "src\\lab5A.o" 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file helloworld.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+20:44:49 **** Incremental Build of configuration Debug for project helloworld ****
+Info: Internal Builder is used for build
+gcc -o helloworld.exe "src\\helloworld.o" "src\\lab5A.o" 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file helloworld.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+20:44:56 **** Incremental Build of configuration Debug for project helloworld ****
+Info: Internal Builder is used for build
+gcc -o helloworld.exe "src\\helloworld.o" "src\\lab5A.o" 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file helloworld.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+20:44:58 **** Incremental Build of configuration Debug for project helloworld ****
+Info: Internal Builder is used for build
+gcc -o helloworld.exe "src\\helloworld.o" "src\\lab5A.o" 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file helloworld.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+20:45:39 **** Incremental Build of configuration Debug for project helloworld ****
+Info: Internal Builder is used for build
+gcc -o helloworld.exe "src\\helloworld.o" "src\\lab5A.o" 
+Info: Nothing to build for helloworld
+20:46:01 **** Incremental Build of configuration Debug for project helloworld ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\helloworld.o" "..\\src\\helloworld.c" 
+..\src\helloworld.c: In function 'main':
+..\src\helloworld.c:22:64: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'int' [-Wformat=]
+   scanf("Enter an integer and a character separated by blank: %d %c",c1 ,c2);
+                                                                ^
+..\src\helloworld.c:22:67: warning: format '%c' expects argument of type 'char *', but argument 3 has type 'int' [-Wformat=]
+   scanf("Enter an integer and a character separated by blank: %d %c",c1 ,c2);
+                                                                   ^
+..\src\helloworld.c:23:20: warning: comparison between pointer and integer
+   if(c1==-10000||c2=="-10000"){
+                    ^~
+..\src\helloworld.c:23:20: warning: comparison with string literal results in unspecified behavior [-Waddress]
+..\src\helloworld.c:22:3: warning: 'c2' is used uninitialized in this function [-Wuninitialized]
+   scanf("Enter an integer and a character separated by blank: %d %c",c1 ,c2);
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\helloworld.c:22:3: warning: 'c1' is used uninitialized in this function [-Wuninitialized]
+gcc -o helloworld.exe "src\\helloworld.o" "src\\lab5A.o" 
+20:51:39 **** Rebuild of configuration Debug for project helloworld ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\helloworld.o" "..\\src\\helloworld.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\lab5A.o" "..\\src\\lab5A.c" 
+gcc -o helloworld.exe "src\\helloworld.o" "src\\lab5A.o" 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file helloworld.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for helloworld
+20:56:27 **** Incremental Build of configuration Debug for project helloworld ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\lab5A.o" "..\\src\\lab5A.c" 
+..\src\lab5A.c: In function 'main':
+..\src\lab5A.c:12:64: warning: format '%d' expects argument of type 'int *', but argument 2 has type 'int' [-Wformat=]
+   scanf("Enter an integer and a character separated by blank: %d %c",c1 ,c2);
+                                                                ^
+..\src\lab5A.c:12:67: warning: format '%c' expects argument of type 'char *', but argument 3 has type 'int' [-Wformat=]
+   scanf("Enter an integer and a character separated by blank: %d %c",c1 ,c2);
+                                                                   ^
+..\src\lab5A.c:13:23: warning: comparison between pointer and integer
+   if((c1==-10000)||(c2=="-10000")){
+                       ^~
+..\src\lab5A.c:13:23: warning: comparison with string literal results in unspecified behavior [-Waddress]
+..\src\lab5A.c:12:3: warning: 'c2' is used uninitialized in this function [-Wuninitialized]
+   scanf("Enter an integer and a character separated by blank: %d %c",c1 ,c2);
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\lab5A.c:12:3: warning: 'c1' is used uninitialized in this function [-Wuninitialized]
+gcc -o helloworld.exe "src\\helloworld.o" "src\\lab5A.o" 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file helloworld.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+20:56:42 **** Incremental Build of configuration Debug for project helloworld ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\helloworld.o" "..\\src\\helloworld.c" 
+gcc -o helloworld.exe "src\\helloworld.o" "src\\lab5A.o" 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file helloworld.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+20:56:54 **** Incremental Build of configuration Debug for project helloworld ****
+Info: Internal Builder is used for build
+gcc -o helloworld.exe "src\\helloworld.o" "src\\lab5A.o" 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file helloworld.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+20:56:55 **** Incremental Build of configuration Debug for project helloworld ****
+Info: Internal Builder is used for build
+gcc -o helloworld.exe "src\\helloworld.o" "src\\lab5A.o" 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file helloworld.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+20:57:04 **** Incremental Build of configuration Debug for project helloworld ****
+Info: Internal Builder is used for build
+gcc -o helloworld.exe "src\\helloworld.o" "src\\lab5A.o" 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file helloworld.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+21:00:28 **** Incremental Build of configuration Debug for project helloworld ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\helloworld.o" "..\\src\\helloworld.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\lab5A.o" "..\\src\\lab5A.c" 
+gcc -o helloworld.exe "src\\helloworld.o" "src\\lab5A.o" 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file helloworld.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+21:35:39 **** Incremental Build of configuration Debug for project helloworld ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\lab5A.o" "..\\src\\lab5A.c" 
+gcc -o helloworld.exe "src\\helloworld.o" "src\\lab5A.o" 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file helloworld.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+21:06:49 **** Rebuild of configuration Debug for project correctarray.c ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\correctarray.o" "..\\src\\correctarray.c" 
+..\src\correctarray.c:16:22: fatal error: sys/wait.h: No such file or directory
+ #include <sys/wait.h>
+                      ^
+compilation terminated.
+21:07:10 **** Incremental Build of configuration Debug for project correctarray.c ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\correctarray.o" "..\\src\\correctarray.c" 
+gcc -o correctarray.c.exe "src\\correctarray.o" 
+21:07:29 **** Rebuild of configuration Debug for project helloworld ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\lab5strcat.o" "..\\src\\lab5strcat.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\binaryFunction.o" "..\\src\\binaryFunction.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\lab6swapC.o" "..\\src\\lab6swapC.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\lab5B.o" "..\\src\\lab5B.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\lab5A.o" "..\\src\\lab5A.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\lab5myatoi.o" "..\\src\\lab5myatoi.c" 
+..\src\lab5myatoi.c: In function 'isQuit':
+..\src\lab5myatoi.c:63:6: warning: unused variable 'i' [-Wunused-variable]
+  int i;
+      ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\lab6sorting.o" "..\\src\\lab6sorting.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\lab5C.o" "..\\src\\lab5C.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\lab6swapB.o" "..\\src\\lab6swapB.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\lab5D.o" "..\\src\\lab5D.c" 
+..\src\lab5D.c:18:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main() {
+      ^~~~
+..\src\lab5D.c: In function 'isQuit':
+..\src\lab5D.c:98:6: warning: unused variable 'i' [-Wunused-variable]
+  int i;
+      ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\helloworld.o" "..\\src\\helloworld.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\lab6struct2.o" "..\\src\\lab6struct2.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\lab6array2D.o" "..\\src\\lab6array2D.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\lab5RGB.o" "..\\src\\lab5RGB.c" 
+gcc -o helloworld.exe "src\\binaryFunction.o" "src\\helloworld.o" "src\\lab5A.o" "src\\lab5B.o" "src\\lab5C.o" "src\\lab5D.o" "src\\lab5RGB.o" "src\\lab5myatoi.o" "src\\lab5strcat.o" "src\\lab6array2D.o" "src\\lab6sorting.o" "src\\lab6struct2.o" "src\\lab6swapB.o" "src\\lab6swapC.o" 
+src\lab5A.o: In function `main':
+C:\Users\alisr\Desktop\uni\TestC\helloworld\Debug/../src/lab5A.c:15: multiple definition of `main'
+src\helloworld.o:C:\Users\alisr\Desktop\uni\TestC\helloworld\Debug/../src/helloworld.c:12: first defined here
+src\lab5B.o: In function `main':
+C:\Users\alisr\Desktop\uni\TestC\helloworld\Debug/../src/lab5B.c:11: multiple definition of `main'
+src\helloworld.o:C:\Users\alisr\Desktop\uni\TestC\helloworld\Debug/../src/helloworld.c:12: first defined here
+src\lab5C.o: In function `main':
+C:\Users\alisr\Desktop\uni\TestC\helloworld\Debug/../src/lab5C.c:11: multiple definition of `main'
+src\helloworld.o:C:\Users\alisr\Desktop\uni\TestC\helloworld\Debug/../src/helloworld.c:12: first defined here
+src\lab5D.o: In function `main':
+C:\Users\alisr\Desktop\uni\TestC\helloworld\Debug/../src/lab5D.c:18: multiple definition of `main'
+src\helloworld.o:C:\Users\alisr\Desktop\uni\TestC\helloworld\Debug/../src/helloworld.c:12: first defined here
+src\lab5RGB.o: In function `main':
+C:\Users\alisr\Desktop\uni\TestC\helloworld\Debug/../src/lab5RGB.c:16: multiple definition of `main'
+src\helloworld.o:C:\Users\alisr\Desktop\uni\TestC\helloworld\Debug/../src/helloworld.c:12: first defined here
+src\lab5myatoi.o: In function `main':
+C:\Users\alisr\Desktop\uni\TestC\helloworld\Debug/../src/lab5myatoi.c:17: multiple definition of `main'
+src\helloworld.o:C:\Users\alisr\Desktop\uni\TestC\helloworld\Debug/../src/helloworld.c:12: first defined here
+src\lab5myatoi.o: In function `isQuit':
+C:\Users\alisr\Desktop\uni\TestC\helloworld\Debug/../src/lab5myatoi.c:62: multiple definition of `isQuit'
+src\lab5D.o:C:\Users\alisr\Desktop\uni\TestC\helloworld\Debug/../src/lab5D.c:97: first defined here
+src\lab5strcat.o: In function `main':
+C:\Users\alisr\Desktop\uni\TestC\helloworld\Debug/../src/lab5strcat.c:21: multiple definition of `main'
+src\helloworld.o:C:\Users\alisr\Desktop\uni\TestC\helloworld\Debug/../src/helloworld.c:12: first defined here
+src\lab6array2D.o: In function `main':
+C:\Users\alisr\Desktop\uni\TestC\helloworld\Debug/../src/lab6array2D.c:26: multiple definition of `main'
+src\helloworld.o:C:\Users\alisr\Desktop\uni\TestC\helloworld\Debug/../src/helloworld.c:12: first defined here
+src\lab6array2D.o: In function `exchange2D':
+C:\Users\alisr\Desktop\uni\TestC\helloworld\Debug/../src/lab6array2D.c:82: multiple definition of `exchange2D'
+src\helloworld.o:C:\Users\alisr\Desktop\uni\TestC\helloworld\Debug/../src/helloworld.c:56: first defined here
+src\lab6array2D.o: In function `print2D':
+C:\Users\alisr\Desktop\uni\TestC\helloworld\Debug/../src/lab6array2D.c:94: multiple definition of `print2D'
+src\helloworld.o:C:\Users\alisr\Desktop\uni\TestC\helloworld\Debug/../src/helloworld.c:66: first defined here
+src\lab6sorting.o: In function `main':
+C:\Users\alisr\Desktop\uni\TestC\helloworld\Debug/../src/lab6sorting.c:19: multiple definition of `main'
+src\helloworld.o:C:\Users\alisr\Desktop\uni\TestC\helloworld\Debug/../src/helloworld.c:12: first defined here
+src\lab6struct2.o: In function `main':
+C:\Users\alisr\Desktop\uni\TestC\helloworld\Debug/../src/lab6struct2.c:26: multiple definition of `main'
+src\helloworld.o:C:\Users\alisr\Desktop\uni\TestC\helloworld\Debug/../src/helloworld.c:12: first defined here
+src\lab6swapB.o: In function `main':
+C:\Users\alisr\Desktop\uni\TestC\helloworld\Debug/../src/lab6swapB.c:15: multiple definition of `main'
+src\helloworld.o:C:\Users\alisr\Desktop\uni\TestC\helloworld\Debug/../src/helloworld.c:12: first defined here
+src\lab6swapC.o: In function `main':
+C:\Users\alisr\Desktop\uni\TestC\helloworld\Debug/../src/lab6swapC.c:15: multiple definition of `main'
+src\helloworld.o:C:\Users\alisr\Desktop\uni\TestC\helloworld\Debug/../src/helloworld.c:12: first defined here
+src\lab6swapC.o: In function `swapIncres':
+C:\Users\alisr\Desktop\uni\TestC\helloworld\Debug/../src/lab6swapC.c:32: multiple definition of `swapIncres'
+src\lab6swapB.o:C:\Users\alisr\Desktop\uni\TestC\helloworld\Debug/../src/lab6swapB.c:32: first defined here
+src\lab6swapC.o: In function `swap':
+C:\Users\alisr\Desktop\uni\TestC\helloworld\Debug/../src/lab6swapC.c:38: multiple definition of `swap'
+src\lab6swapB.o:C:\Users\alisr\Desktop\uni\TestC\helloworld\Debug/../src/lab6swapB.c:38: first defined here
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for correctarray.c
+21:08:20 **** Incremental Build of configuration Debug for project correctarray.c ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\correctarray.o" "..\\src\\correctarray.c" 
+..\src\correctarray.c: In function 'main':
+..\src\correctarray.c:43:14: warning: variable 's' set but not used [-Wunused-but-set-variable]
+     long int s;
+              ^
+gcc -o correctarray.c.exe "src\\correctarray.o" 
+Info: Nothing to build for correctarray.c
+Info: Nothing to build for correctarray.c

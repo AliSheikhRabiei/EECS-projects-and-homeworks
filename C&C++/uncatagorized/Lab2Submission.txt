@@ -1,0 +1,106 @@
+# LAB 2 submition
+
+# 55 - Initial numeric sort
+sort -k3 xFile123compact
+
+# 56 - Fixed numeric sort by 3rd field
+sort -k3,3n xFile123compact
+
+# 57 - (1) Sort by year (6th field)
+sort -k6n xFile123compact
+
+# 57 - (2) Reverse sort by year
+sort -k6nr xFile123compact
+
+# 58 - Initial month sort 
+sort -k5 xFile123compact
+
+# 59 - Month sort by abbreviation
+sort -k5M xFile123compact
+
+# 60 - Find any '2' 
+grep 2 xFile123compact
+
+# 61 - Find exact whole word '2'
+grep -w '2' xFile123compact
+
+# 62 - Born in 1950s
+grep '195[0-9]' xFile123compact
+
+# 63 - Count 1950s births
+grep '195[0-9]' xFile123compact | wc -l
+
+# 64 - Student count
+wc -l 22Fclasslist | awk '{print $1}'
+
+# 65 - Find by surname
+grep $'\tAli\t' 22Fclasslist
+
+# 66 - (1) Find Li (incorrect substring match)
+grep 'Li' 22Fclasslist
+
+# 66 - (2) Exact surname Li
+grep $'\tLi\t' 22Fclasslist
+
+# 67 - (1) Count Wong students
+grep -c $'\tWong\t' 22Fclasslist
+
+# 67 - (2) Show Wong students
+grep $'\tWong\t' 22Fclasslist
+
+# 68 - (1) Count Liu students
+grep -c $'\tLiu\t' 22Fclasslist
+
+# 68 - (2) Show Liu students
+grep $'\tLiu\t' 22Fclasslist
+
+# 69 - Count Wang students
+grep -c $'\tWang\t' 22Fclasslist
+
+# 70 - (1) Find Chen or Chan
+grep -E $'\t(Chan|Chen)\t' 22Fclasslist
+
+# 70 - (2) Find Liu or Lau
+grep -E $'\t(Liu|Lau)\t' 22Fclasslist
+
+# 70 - (3) Find Wang or Wong
+grep -E $'\t(Wang|Wong)\t' 22Fclasslist
+
+# 70 - (4) Find Chang or Zhang
+grep -E $'\t(Chang|Zhang)\t' 22Fclasslist
+
+# 70 - (5) Find Zhu or Zhou
+grep -E $'\t(Zhu|Zhou)\t' 22Fclasslist
+
+# 70 - (6) Find Gu or Guo
+grep -E $'\t(Gu|Guo)\t' 22Fclasslist
+
+# 72 - Lines containing "the"
+grep 'the' /eecs/dept/course/2019-20/W/2030tmp/lyrics
+
+# 73 - Whole word "the"
+grep -w 'the' /eecs/dept/course/2019-20/W/2030tmp/lyrics
+
+# 74 - Exclude whole word "the"
+grep -w -v 'the' /eecs/dept/course/2019-20/W/2030tmp/lyrics
+
+# 75 - Contains digits
+grep '[0-9]' /eecs/dept/course/2019-20/W/2030tmp/lyrics
+
+# 76 - Contains 1980
+grep '1980' /eecs/dept/course/2019-20/W/2030tmp/lyrics
+
+# 77 - Ends with 1980
+grep '1980$' /eecs/dept/course/2019-20/W/2030tmp/lyrics
+
+# 78 - Contains "sea"
+grep 'sea' /eecs/dept/course/2019-20/W/2030tmp/lyrics
+
+# 79 - Starts with "sea"
+grep '^sea' /eecs/dept/course/2019-20/W/2030tmp/lyrics
+
+# 80 - Word pattern ".nd"
+grep '\<.nd\>' /eecs/dept/course/2019-20/W/2030tmp/lyrics
+
+# 81 - Contains A-D letters
+grep '[A-Da-d]' /eecs/dept/course/2019-20/W/2030tmp/lyrics

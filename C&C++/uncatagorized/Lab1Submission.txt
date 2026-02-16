@@ -1,0 +1,70 @@
+# LAB 1 submition
+
+31. (1) cat > temp
+       Hi
+       There
+       ^D
+    (2) ls
+    (3) cat temp
+
+32. rm temp
+
+33. cat xFile1
+
+34. cat xFile1 xFile2 xFile3
+
+35. wc -l xFile1
+
+36. head -2 xFile1
+
+37. tail -3 xFile2
+
+38. (1) cmp xFile1 xFile2
+    (2) echo $?
+
+39. (1) diff xFile1 xFile2
+    (2) echo $?
+
+40. (1) diff xFile2 xFile3
+    (2) echo $?
+
+41. (1) cmp xFile2 xFile3
+    (2) echo $?
+
+42. (1) cat xFile1 xFile2 xFile3 > xFile123
+    (2) cat xFile123
+
+43. sort xFile123
+
+44. sort xFile123 | uniq
+
+45. sort xFile123 | uniq > xFile123compact
+
+46. cat xFile123compact
+
+47. chmod u-r xFile1
+    ls -l xFile1
+    cat xFile1  # Permission denied
+
+48. chmod 775 xFile1
+    ls -l xFile1  # Shows -rwxrwxr-x
+
+49. chmod g-w,o+rw xFile1
+
+50. echo "this is a xxx new line" >> xFile1
+    cat xFile1
+
+51. chmod u-w xFile1
+    echo "another line" >> xFile1  # Permission denied
+
+52. cp /eecs/dept/course/2019-20/W/2030tmp/Hello.html ~/www/
+    chmod o+rx ~/www
+    chmod o+r ~/www/Hello.html
+    # Edit file, then:
+    chmod o-r ~/www/Hello.html
+
+53. (1) ls -lt
+    (2) ls -ltr
+
+54. (1) ls -lS
+    (2) ls -lSr

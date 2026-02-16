@@ -1,0 +1,8 @@
+Processor Model and Final x1 Value in Hex:
+Single-cycle: x1=0x0000000C
+5-stage: x1=0x0000000C
+5-stage w/o forwarding: x1=0x0000000C
+5-stage w/o hazard detection: x1=0x0000000C
+5-stage w/o forwarding or hazard detection: x1=0x0000000C
+6-stage dual-issue processor: x1=0x0000000C
+They are all same!

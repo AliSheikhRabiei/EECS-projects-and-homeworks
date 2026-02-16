@@ -1,0 +1,51 @@
+-- (a) Directors born in Canada
+Joins Director to BirthLocation on the foreign key and filters rows where the location’s country is Canada, then lists the director name plus city/state/country.
+
+"first_name"	"surname"	"city"	"state"	"country"
+"David"	"Cronenberg"	"Toronto"	"ON"	"Canada"
+
+
+-- (b) Movies directed by 'David Lynch'
+Joins Movie to Director via the movie id stored on each director row, keeps only directors whose first name and surname match the 'David' and 'Lynch', and returns each movie’s id/title/release date sorted by date.
+
+"id"	"title"	"date"	"first_name"	"surname"
+11	"Eraserhead"	"1977-03-19"	"David"	"Lynch"
+14	"The Elephant Man"	"1980-10-03"	"David"	"Lynch"
+10	"Blue Velvet"	"1986-09-19"	"David"	"Lynch"
+13	"Lost Highway"	"1997-02-21"	"David"	"Lynch"
+12	"Mulholland Drive"	"2001-10-19"	"David"	"Lynch"
+
+
+-- (c) Actors in movies with production cost > $1,000,000	
+For every row it multiplies the USD budget by each rate to show CAD, JPY, RUB, EUR and CHF. I am not sure about the exact rates, so I used approximate values here.
+
+"actor_name"	"title"	"budget"	"budget_cad"	"budget_jpy"	"budget_rub"	"budget_eur"	"budget_chf"
+"Brad Pitt"	"Fight Club"	63000000	84420000.00	9198000000.00	5859000000.00	58590000.00	56700000.00
+"Russell Crowe"	"A Beautiful Mind"	58000000	77720000.00	8468000000.00	5394000000.00	53940000.00	52200000.00
+"Bill Pullman"	"Lost Highway"	15000000	20100000.00	2190000000.00	1395000000.00	13950000.00	13500000.00
+"Naomi Watts"	"Mulholland Drive"	15000000	20100000.00	2190000000.00	1395000000.00	13950000.00	13500000.00
+"Kyle MacLachlan"	"Blue Velvet"	6000000	8040000.00	876000000.00	558000000.00	5580000.00	5400000.00
+"John Hurt"	"The Elephant Man"	5000000	6700000.00	730000000.00	465000000.00	4650000.00	4500000.00
+"Daniel Radcliffe"	"Swiss Army Man"	3000000	4020000.00	438000000.00	279000000.00	2790000.00	2700000.00
+"Paul Dano"	"Swiss Army Man"	3000000	4020000.00	438000000.00	279000000.00	2790000.00	2700000.00
+
+-- (d) Directors whose surname starts with A or D
+Scans the Director table and selects rows whose surname satisfies LIKE 'A%' or LIKE 'D%', returning names alphabetically.
+
+"first_name"	"surname"
+"Wes"	"Anderson"
+"Xavier"	"Dolan"
+
+-- (e) Comedy movies that have at least one actor younger than 40 years old
+Computes each actor’s age using either full date_of_birth and year_of_birth, then joins through MovieGenre/Genre to keep only movies whose genre is Comedy and through MovieActor to require at least one cast member with age_years < 40.
+
+"title"	"actor_name"	"genre"	"age_years"
+"Swiss Army Man"	"Daniel Radcliffe"	"Comedy"	36
+
+-- (f) All pairs of blue-eyed actors, alphabetical
+Self-joins Actor to itself with a1.id < a2.id to avoid (X,Y)/(Y,X) and self-pairs, filters both sides to eye_color ILIKE 'blue', and emits each pair sorted lexicographically via LEAST/GREATEST.
+
+"actor1"	"actor2"
+"Brad Pitt"	"Daniel Radcliffe"
+"Brad Pitt"	"Paul Dano"
+"Daniel Radcliffe"	"Paul Dano"

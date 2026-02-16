@@ -1,0 +1,75 @@
+I lines might be off 1-2 off from what it is in pdf, so i write the whole line and its hazard.
+
+No structural hazards.
+
+
+Line 16- lw x14, 0(x12)
+Producer: line 15 add x12, x5, x11
+Register: x12
+Hazard: data hazard (RAW: x12 written at line 15, read at line 16)
+
+
+Line 19 – lw x15, 0(x13)
+Producer: line 18 add x13, x4, x11
+Register: x13
+Hazard: data hazard (RAW: x13 written at line 18, read at line 19)
+
+Line 21 – add x10, x15, x14
+Producer: line 19 lw x15, 0(x13)
+Register: x15
+Hazard: data hazard (load-use hazard)
+
+Line 22 – andi x10, x10, 1
+Producer: line 21 add x10, x15, x14
+Register: x10
+Hazard: data hazard (RAW: ALU result of x10 immediately used)
+
+Line 25 – lw x6, 56(x3)
+Producer: line 24 addi x3, x3, 0
+Register: x3
+Hazard: data hazard (RAW: base address x3 updated then immediately used)
+
+Line 27 – beq x10, x0, even
+Hazard: control hazard (branch; next PC depends on result)
+
+Line 31 – sw x23, 0(x13)
+Producer: line 30 add x23, x14, x14
+Register: x23
+Hazard: data hazard (RAW: store uses freshly computed x23)
+
+Line 34 – sub x24, x24, x15
+Producer: line 33 addi x24, x15, 5
+Register: x24
+Hazard: data hazard (RAW: x24 just written, used right away)
+
+Line 35 – sw x24, 0(x12)
+Producer: line 34 sub x24, x24, x15
+Regiser: x24
+Hazard: data hazard (RAW: x24 written, then stored)
+
+Line 37 – jal x0, loop_end
+Hazard: control hazard (unconditional jump)
+
+Line 42 – addi x23, x23, 1
+Producer: line 41 sub x23, x15, x15
+Register: x23
+Hazard: data hazard (RAW on x23)
+
+Line 43 – sw x23, 0(x13)
+Producer: line 42 addi x23, x23, 1
+Register: x23
+Hasard: data hazard (RAW on x23)
+
+Line 46 – sw x24, 0(x12)
+Producer: line 45 mul x24, x14, x14
+Register: x24
+Hazard: data hazard (RAW on x24)
+
+Line 51 – bne x6, x11, loop_head
+Producer: line 50 addi x11, x11, 4
+Register: x11
+Hazard: data hazard
+
+Line 51 – bne x6, x11, loop_head
+Hazard: control hazard (loop branch)
+

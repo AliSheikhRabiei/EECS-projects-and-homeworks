@@ -1,0 +1,61 @@
+-- a) Average age of all actors
+We derive each actor’s age using date_of_birth when available, otherwise subtracting year_of_birth from the current year. Then we average these ages over all actors, ignoring NULLs.
+
+"avg_actor_age_years"
+62.11
+
+-- b)Beautiful mind countries
+This query joins Movie, MovieActor, Actor, BirthLocation and filters to the movie title A Beautiful mind. From the actors linked to that movie, it counts distinct values of BirthLocation.country, which yields the number of different countries those actors were born in.(only  Russell Crowe)
+
+"countries"
+1
+
+-- (c) Short explanation:
+Here i count rows in Actor where eye_color is “green”, so NULL eye colors are naturally excluded by the WHERE clause. The query returns the total number of green-eyed actors.
+
+"green_eyed_actors"
+1
+
+-- (d) Number of movies Brad Pitt acted in
+We join the junction table MovieActor to Actor, filter to the actor named Brad Pitt, and count distinct movie IDs to avoid double-counting if multiple cast rows exist per movie.(Considering the fact that his character is not real in the movie should i remove him from the cast?)
+
+"movies_with_brad_pitt"
+1
+
+--(e) Min,Avg,Max budget per Genre
+This code join Genre, MovieGenre, Movie, filter out rows where budget is NULL, then group by Genre. type and compute MIN, AVG, and MAX(aggregator) of Movie.budget for each genre.
+
+"genre"	"movie_count"	"min_budget_usd"	"avg_budget_usd"	"max_budget_usd"
+"Comedy"	1	3000000	3000000	3000000
+"Drama"	2	6000000	32000000	58000000
+"Horror"	1	100000	100000	100000
+"Thriller"	1	63000000	63000000	63000000
+
+-- (f) Average rating for movies with a Toronto-born director OR a blue-eyed actor
+This table joins Movie with both Director, BirthLocation and Actor through MovieActor.
+The WHERE clause applies an OR condition: the movie qualifies if any director’s birthplace city is “Toronto” or if any linked actor’s eye_color is blue. Then we group by movie title and average the rating.
+
+"title"	"avg_rating"
+"Fight Club"	88.00
+"Swiss Army Man"	83.00
+
+(g) Movies with actors born in at least two different countries
+
+This query joins movies to their actors and each actor’s birth location, then groups by movie. For each movie it counts how many different countries the actors come from and keeps only those with two or more distinct countries. The output lists each such movie title together with the number of distinct actor countries.
+
+"title"	"distinct_actor_countries"
+"Swiss Army Man"	2
+
+(h) Award count and rank per movie
+
+This query joins each movie with any awards linked to it and counts how many awards each movie has in total. It then uses a window function to assign a rank, ordering movies from the highest award count to the lowest (ties receive the same rank). Finally it displays the movie title, its total number of awards, and its rank, sorted by award count and then by title.
+
+"title"	"total_awards"	"rank_by_awards"
+"A Beautiful Mind"	2	1
+"Blue Velvet"	1	2
+"Fight Club"	1	2
+"Swiss Army Man"	1	2
+"Eraserhead"	0	5
+"Lost Highway"	0	5
+"Mulholland Drive"	0	5
+"The Elephant Man"	0	5

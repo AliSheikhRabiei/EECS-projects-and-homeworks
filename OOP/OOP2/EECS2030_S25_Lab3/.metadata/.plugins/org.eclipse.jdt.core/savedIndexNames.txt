@@ -1,0 +1,10 @@
+INDEX VERSION 1.134+C:\Users\alisr\eclipse-workspace\EECS2030_S25_Lab3\.metadata\.plugins\org.eclipse.jdt.core
+4148933179.index
+454758968.index
+2240219211.index
+4061212442.index
+4011731184.index
+1903869267.index
+1865797976.index
+702680711.index
+137933215.index
